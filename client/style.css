@@ -1,0 +1,214 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Ubuntu Light', 'Century Gothic', sans-serif;
+  margin: 5;
+  padding: 0;
+  color: black;
+  /* background: lightgrey; */
+  text-align: center;
+  font-weight: bold;
+}
+
+body {
+  background-image: url('images/Biking.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* display: gird;
+    grid-template-columns: auto / repeat(4,1fr);
+    grid-template-areas: 
+    "nav nav nav nav"
+    ". mainContainer mainContainer ."
+    ". mainContainer mainContainer ."
+    ; */
+}
+
+#nav {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.6em;
+  width: 80%;
+  height: 2.5em;
+  border: 2px solid black;
+  margin: auto;
+  padding: 2px;
+  padding-top: 10px;
+  background-color: rgba(172, 172, 172, 0.5);
+  background-image: none;
+  grid-area: nav;
+  border-radius: 4px;
+
+  /* justify-content: center;
+  text-align: center;
+  font-size: 1.6em;
+  width: 80%;
+  height: 2.5em;
+  border: 2px solid black;
+  margin: auto;
+  padding: 2px;
+  padding-top: 10px;
+  background-color: teal;
+  background-image: none;
+  grid-area: nav; */
+
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+}
+
+.mainContainer {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 1000px;
+  background-color: transparent;
+  /* border: 1px solid black; */
+  border-radius: 5px;
+  overflow-y: scroll;
+  margin-top: 130px;
+  /* grid-area: mainContainer; */
+}
+
+.eventBox {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding: 2px;
+  padding-top: 10px;
+  background-color: rgba(172, 172, 172, 0.5);
+  background-image: none;
+  border: 1px solid black;
+  border-radius: 9px;
+  /* /* position:fixed;
+    top: 100px;
+    left: 0;
+    right: 0; */
+}
+
+#navText {
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  color: black;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+#navSignup {
+  margin-right: 10.5%;
+  margin-top: 0.9%;
+  font-size: 150%;
+  position: relative;
+  float: right;
+  box-shadow: 2px 2px 5px;
+  background: transparent;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid black;
+  text-decoration: none;
+  padding: 3px;
+  padding-top:7px;
+  justify-content: right;
+  align-items: center;
+  height: 50px;
+  width: 130px;
+
+  /* position: fixed;
+    right: 300px; */
+}
+
+#eventContainer {
+  border: 2px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8em;
+  background: rgb(245, 227, 204);
+  width: 60%;
+  height: 30em;
+  box-shadow: 10px 10px rgba(34, 34, 34, 0.363);
+  border-radius: 10px;
+  color: white;
+
+}
+
+#eventFields {
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+#submitButton {
+  width: 10em;
+  height: 2em;
+}
+
+#signupEventButton {
+    font-size: 1.5em;
+    padding-left: 10px;
+    padding-right:10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    margin-left: 35%;
+    background-color: rgba(130, 130, 130, 0.5);
+    margin-bottom: 1%;
+    box-shadow: 2px 2px 5px;
+    border-radius: 6px;
+}
+
+#commentButton {
+        font-size: 1.5em;
+        box-shadow: 2px 2px 5px;
+      background-color: rgba(130, 130, 130, 0.5);
+      padding-left: 10px;
+    padding-right:10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 6px;
+    }
+
+#dropDown {
+  font-size: 1.5em;
+  width:100px;
+  background-color: rgba(130, 130, 130, 0.5)
+}
+
+#signUpInput {
+    margin-left: 30px;
+    height: 40px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+#sortText {
+  font-size: 1.5em;
+}
+
+/* Hover properties */
+#viewParticipants:hover {
+    cursor: pointer;
+        }
+#commentButton:hover {
+    cursor: pointer;
+        }
+#signupEventButton:hover {
+    cursor: pointer;
+        }
+#submitButton:hover {
+    cursor: pointer;
+        }
+
+        .mainContainer::-webkit-scrollbar {
+            width: 12px;               /* width of the entire scrollbar */
+          }
+          
+          .mainContainer::-webkit-scrollbar-track {
+            background: rgba(240, 239, 238, 0.5);
+               /* color of the tracking area */
+          }
+          
+          .mainContainer::-webkit-scrollbar-thumb {
+            background-color: rgb(65, 65, 70);    /* color of the scroll thumb */
+            border-radius: 20px;       /* roundness of the scroll thumb */
+            border: 3px solid rgb(255, 255, 255);  /* creates padding around scroll thumb */
+          }
