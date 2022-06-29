@@ -1,3 +1,57 @@
+
+/////Stab-It Rabbit Data Table////////
+
+/////////Events
+// CREATE TABLE event (
+//     event_id INT NOT null,
+//     FOREIGN KEY (event_id)
+//     REFERENCES events_list (id),
+//     comment_id INT NOT null,
+//     FOREIGN KEY (comment_id)
+//     REFERENCES comments (id)
+//     )
+/////////Comments
+//     CREATE TABLE comments (
+//     id SERIAL PRIMARY KEY,
+//     username VARCHAR NOT NULL,
+//     event_id INT NOT NULL,
+//     date_posted TIMESTAMP NOT NULL,
+//     comment VARCHAR NOT NULL
+//     )
+
+/////////Participants
+//     CREATE TABLE participants (
+//     participant_id INT NOT NULL,
+//     FOREIGN KEY (participant_id)
+//     REFERENCES users (id),
+//     event_id INT NOT NULL,
+//     FOREIGN KEY (event_id)
+//     REFERENCES events_list (id)
+//     )
+
+/////////Events List
+//     CREATE TABLE events_list (
+//     id SERIAL PRIMARY KEY,
+//     title VARCHAR NOT NULL,
+//     start_date VARCHAR NOT NULL,
+//     end_date VARCHAR NOT NULL,
+//     activity VARCHAR NOT NULL,
+//     max_participants INT NOT NULL,
+//     zip INT NOT NULL
+//     )
+
+/////////Users
+//     CREATE TABLE users (
+//     id SERIAL PRIMARY KEY,
+//     first_name VARCHAR NOT NULL,
+//     last_name VARCHAR NOT NULL,
+//     user_name VARCHAR NOT NULL,
+//     password VARCHAR NOT NULL,
+//     zip INT,
+//     profile_picture_url VARCHAR
+//     );
+
+/////////////**********/////////////Previous Database Notes////////////////**********////////////////
 // USER TABLE
 
 // CREATE TABLE users(
