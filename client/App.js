@@ -13,7 +13,7 @@ export default function App() {
       <h1>Stab-It Rabbit Landing Pad</h1>
 
       <nav id="nav">
-        <Link id="navText" to="/">
+        <Link id="navText" to="/home">
           Home
         </Link>{' '}
         |{' '}
@@ -25,9 +25,10 @@ export default function App() {
           My Profile
         </Link>
       </nav>
-      <Link id="navSignup" to="/signup">
+      {/* </header> */}
+      {/* <Link id="navSignup" to="/signup">
         Sign up!
-      </Link>
+      </Link> */}
       {/* <div>
                 <MainContainer/>
             </div> */}
