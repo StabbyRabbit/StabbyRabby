@@ -59,22 +59,23 @@ return formattedDate;
         return (
 
             <div className='eventBox'>
+              <h2>Title: {info.title}</h2>
+              <h2>Date: {info.start_date}</h2>
+              <h2>End: {info.end_date}</h2>
+              <h2>Activity: {info.activity}</h2>
+              <h2>Location: {info.zip}</h2>
+              <h2>Number of Participants: {info.max_participants}</h2>
+              <h2>Sign up list: {info.participants}</h2>
+              <button id = 'commentButton' onClick={() => {
               {/* <h2>Date: {info.name}</h2>
               <h2>Activity: {info.number}</h2>
               <h2>Start: {info.amount}</h2>
               <h2>End: {info.due}</h2> */}
-              
-              <h2>Event title: {info.title}</h2>
               <h2>Date: {changeDate()}</h2>
-              <h2>Activity type: {info.activity_type}</h2>
-              <h2>Location: {info.location}</h2>
-              <h2>Start time: {info.start_time}</h2>
-              <h2>End time: {info.end_time}</h2>
-              <h2>Spots open: {info.num_participants}</h2>
-              <h2>Number of participants: {info.count}</h2>
+             
               {/* <button id = 'commentButton' onClick={() => {
-                  onComment(alert('hello'))
-              }}>Comment</button> */}
+                  onComment(alert('hello'))*/}
+              }}>Comment</button> 
             
               {/* <input id='signUpInput' placeholder='Enter your name!' onChange = {e => {
                 setName(e.target.value)

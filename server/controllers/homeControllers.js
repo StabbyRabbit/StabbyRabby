@@ -5,7 +5,7 @@ const router = require('../routes/homeRouter');
 const homeController = {};
 
 homeController.getEvents = (req, res, next) => {
-  const queryStr = 'SELECT * FROM events';
+  const queryStr = 'SELECT * FROM events_list';
 
   db.query(queryStr)
     .then((data) => {
@@ -23,7 +23,7 @@ homeController.getEvents = (req, res, next) => {
 
 homeController.deleteEvent = (req, res, next) => {
   const { id } = req.body
-  const queryStr = `DELETE FROM events WHERE id = ${id}`;
+  const queryStr = `DELETE FROM events_list WHERE id = ${id}`;
 
   db.query(queryStr)
     .then((data) => {
@@ -38,7 +38,7 @@ homeController.deleteEvent = (req, res, next) => {
       });
     });
 };
-
+//max number - #of participants in participant table
 homeController.updateEvent = (req, res, next) => {
   const data = req.body;
   const columnNames = Object.keys(data);
