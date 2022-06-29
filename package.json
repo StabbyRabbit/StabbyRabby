@@ -9,6 +9,12 @@
     "dev": "concurrently \"webpack-dev-server --mode development --open --hot\" \"nodemon server/server.js --mode development\" ",
     "test": "jest"
   },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/StabbyRabbit/StabbyRabby"
