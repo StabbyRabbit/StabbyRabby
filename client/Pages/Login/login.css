@@ -1,0 +1,81 @@
+body {
+
+}
+
+h1{
+   
+
+
+}
+#signupNavBar {
+border: 2px solid black;
+left: 0px;
+height: 10%;
+width: 100%;
+background-color: white;
+position: fixed;
+margin-top: -267px;
+vertical-align: middle;
+
+
+}
+
+
+#signUpContainer {
+  
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    width: 20%;
+    padding: 2px;
+    padding: 15px 10px;
+    background: white;
+    border: 3px solid #254261;
+    border-radius: 9px;
+    line-height: 35px;
+    font-size: 20px;
+ 
+ 
+  
+    /* /* position:fixed;
+    
+      top: 100px;
+      left: 0;
+      right: 0; */
+      text-align: center;
+}
+
+#createAccountButton {
+width: 40%;
+padding: 8px 10px;
+
+font-size: 17px;
+}
+
+/* #siteName {
+    text-align: left;
+    margin-top: 1%;
+    margin-left: 2%;
+} */
+
+
+/* #switchLogin {
+
+    text-align: right;
+margin-top: -10px;
+    margin-right: 3%;
+}    */
+
+#navBarText {
+  
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    gap:80%;
+    font-size: 20px;
+   
+}
+
+#logInButton {
+    font-size: 18px;
+}
