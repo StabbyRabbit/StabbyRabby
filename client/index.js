@@ -4,7 +4,7 @@ import App from './App';
 import styles from './style.css';
 
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
-import Profile from "./routes/profile.jsx";
+import Profile from "./Pages/Profile/Profile.jsx";
 import CreateEvent from "./routes/createEvent.jsx";
 import Signup from "./routes/signup.jsx";
 import MainContainer from './MainContainer';
@@ -17,7 +17,7 @@ ReactDOM.render(
             <Route path = "/" element = {<App/>}>
                 <Route path = "/" element = {<MainContainer/>}/>
                 <Route path = "createEvent" element = {<CreateEvent/>}/>
-                <Route path = "Profile" element = {<Profile/>}/>
+                <Route path = "Pages/Profile/Profile" element = {<Profile/>}/>
                 <Route path = "Signup" element = {<Signup/>}/>
                 <Route path="*" element={
                     <main style={{ padding: "1rem" }}>

@@ -10,8 +10,7 @@ export default function App() {
   //     .then(response => console.log(response));
   return (
     <div display="flex">
-      <h1>Yeti Crab Landing Pad</h1>
-
+      {/* <h1>Yeti Crab Landing Pad</h1> */}
       <nav id="nav">
         <Link id="navText" to="/">
           Home
@@ -21,7 +20,7 @@ export default function App() {
           Create Event
         </Link>{' '}
         |{' '}
-        <Link id="navText" to="/profile">
+        <Link id="navText" to="/Pages/Profile/Profile">
           My Profile
         </Link>
       </nav>
