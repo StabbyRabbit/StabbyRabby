@@ -1,7 +1,7 @@
 {
-  "name": "yeticrabscratch",
+  "name": "StabRabbitIteration",
   "version": "1.0.2",
-  "description": "Yeti Crab Scratch Project",
+  "description": "StabRabbitIteration",
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yeti-crab-scratch/yetiCrabScratch.git"
+    "url": "git+https://github.com/StabbyRabbit/StabbyRabby"
   },
   "keywords": [],
-  "author": "Johnny Chan, Elliott Burr, Jace Crowe, Chris Fryer",
+  "author": "Alexa Roberts, Carol Xia, Jace Crowe, Tanner Lyon",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yeti-crab-scratch/yetiCrabScratch/issues"
+    "url": "https://github.com/StabbyRabbit/StabbyRabby"
   },
-  "homepage": "https://github.com/yeti-crab-scratch/yetiCrabScratch#readme",
+  "homepage": "https://github.com/StabbyRabbit/StabbyRabby",
   "dependencies": {
     "body-parser": "^1.20.0",
     "concurrently": "^7.2.2",
