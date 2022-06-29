@@ -1,5 +1,7 @@
 
 /////Stab-It Rabbit Data Table////////
+// Created tables in elephant sql browser
+// Statements here for reference
 
 /////////Events
 // CREATE TABLE event (
