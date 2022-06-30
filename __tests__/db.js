@@ -4,7 +4,7 @@ const db = require('../server/models/databaseModel')
 
 const testJsonFile = path.resolve(__dirname, './testDatabase.json');
 
-describe('Sample Test', () => {
+xdescribe('Sample Test', () => {
     it('should test that true === true', () => {
       expect(true).toBe(true)
     })

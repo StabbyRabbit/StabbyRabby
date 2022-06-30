@@ -30,7 +30,6 @@ module.exports = {
     //     }
     // }
   },
-
   module: {
     rules: [
       {
@@ -40,6 +39,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: ['@babel/plugin-transform-runtime', '@babel/transform-async-to-generator']
           },
         },
       },
@@ -49,7 +49,9 @@ module.exports = {
       },
     ],
   },
-
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   plugins: [
     new HTMLWebpackPlugin({
       template: './index.html',

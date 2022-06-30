@@ -15,8 +15,6 @@ app.use(cors());
 app.use(express.json());
 app.use(urlencoded());
 
-
-
 app.use('/home', homeRouter);
 app.use('/createEvent', createEventRouter)
 app.use('/profile', profileRouter)

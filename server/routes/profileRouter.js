@@ -5,7 +5,7 @@ const profileControllers = require('../controllers/profileControllers');
 const router = express.Router();
 
 router.delete('/', profileControllers.deleteEvent, (req, res) => {
-    // console.log(res.locals.events)
+    console.log("got inside delete event")
     res.status(200).json(res.locals.events);
 });
 

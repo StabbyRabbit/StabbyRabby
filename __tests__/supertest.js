@@ -3,7 +3,7 @@ const request = require('supertest');
 
 const server = 'http://localhost:3000'
 
-describe('Create Home Route integration', () => {
+xdescribe('Create Home Route integration', () => {
     afterEach(() => {
         return request(server).put('/').send({}).expect({});
     });

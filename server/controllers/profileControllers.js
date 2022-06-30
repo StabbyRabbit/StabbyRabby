@@ -1,13 +1,13 @@
 const {home} = require('nodemon/lib/utils');
 const db = require('../models/databaseModel');
-const router = require('../routes/profileRouter');
 
-const profileController = {};
 
-profileController.getEvents = (req, res, next) => {
+const profileControllers = {};
+
+profileControllers.getEvents = (req, res, next) => {
     const queryStr = 'SELECT * FROM events_list';
 
-    const profileQueryStr = 'SELECT * FROM events_list WHERE'
+    const profileQueryStr = 'SELECT * FROM events_list WHERE '
   //RETURN
     db.query(queryStr)
       .then((data) => {
@@ -24,12 +24,14 @@ profileController.getEvents = (req, res, next) => {
 };
   
 
-profileController.deleteEvent = (req, res, next) => {
+profileControllers.deleteEvent = (req, res, next) => {
     const { id } = req.body
+    console.log(id)
     const queryStr = `DELETE FROM events_list WHERE id = ${id} RETURNING id`;
   //RETURN
     db.query(queryStr)
       .then((data) => {
+        console.log(data)
         res.locals.events = data.rows;
         return next();
       })
@@ -42,7 +44,7 @@ profileController.deleteEvent = (req, res, next) => {
       });
 };
 
-profileController.updateEvent = (req, res, next) => {
+profileControllers.updateEvent = (req, res, next) => {
   const data = req.body;
   const columnNames = Object.keys(data);
   const values = Object.values(data);
@@ -84,4 +86,4 @@ profileController.updateEvent = (req, res, next) => {
 };
 
 
-module.exports = profileController
+module.exports = profileControllers
