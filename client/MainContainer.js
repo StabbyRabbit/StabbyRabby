@@ -57,7 +57,8 @@ export default function MainContainer (){
             <option value="date">Date</option>
             <option value="activity_type">Activity</option>
         </select>
-          <ul>{data.map(info => (   
+          <ul>{data.map(info => 
+          (   
         <EventBox
         key={info.id}
         info={info}/>

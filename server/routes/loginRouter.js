@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
+const cookieController = require('../controllers/cookieController')
 // const db = require('../models/databaseModel');
 
 // redirect to login page
@@ -16,6 +17,7 @@ router.post('/',
   userController.checkUserInputs, 
   userController.checkUserExists, 
   userController.redirectToHomePage,
+  cookieController.setCookie,
   (req, res) => {
     // console.log(res.locals.newUser )
     return res.status(200).json(`Successfully logged in!`);
