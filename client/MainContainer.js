@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Outlet, Link } from "react-router-dom"
 import EventBox from "./EventBox"
 import { useState } from 'react';
-import { getData } from "./fakedata";
+// import { getData } from "./fakedata";
 import { useEffect } from 'react';
 
 
-const data = getData();
+// const data = getData();
 
 
 
