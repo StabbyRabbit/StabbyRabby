@@ -19,7 +19,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(cookieParser());
-
+//app.use('/static', express.static(path.join(__dirname, 'public')))
+app.use('static', express.static(path.join(__dirname, 'index.html')));
 app.use('/home', homeRouter);
 app.use('/createEvent', createEventRouter)
 app.use('/signup', signupRouter)
