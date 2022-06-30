@@ -5,6 +5,7 @@
 
 /////////Events
 // CREATE TABLE event (
+//     name varchar NOT NULL,
 //     event_id INT NOT null,
 //     FOREIGN KEY (event_id)
 //     REFERENCES events_list (id),
@@ -34,9 +35,10 @@
 /////////Events List
 //     CREATE TABLE events_list (
 //     id SERIAL PRIMARY KEY,
+//     creator VARCHAR NOT NULL,
 //     title VARCHAR NOT NULL,
-//     start_date VARCHAR NOT NULL,
-//     end_date VARCHAR NOT NULL,
+//     start_date TIMESTAMP NOT NULL,
+//     end_date TIMESTAMP NOT NULL,
 //     activity VARCHAR NOT NULL,
 //     max_participants INT NOT NULL,
 //     zip INT NOT NULL

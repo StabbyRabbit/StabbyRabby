@@ -1,11 +1,13 @@
 const db = require('../models/databaseModel');
 const bcrypt = require('bcrypt');
 
+// const server = require('../server/server');
+
 const userController = {};
 
-userController.checkUserExists = async (req, res, next) => {
+//make sure user has inputted username and password
+userController.checkUserInputs = (req, res, next) => {
     const {user_name, password} = req.body;
-    //make sure user has inputted username and password
     if(!user_name || !password){
         return next({
             log: 'User input missing username and/or password',
@@ -13,7 +15,12 @@ userController.checkUserExists = async (req, res, next) => {
             message: 'Missing username and/or password',
         });
     } 
-    //checking if username/password combo exists in database
+    return next();
+}
+
+//check whether username/password combo exists in database
+userController.checkUserExists = async (req, res, next) => {
+    const {user_name, password} = req.body;
     const hashPwQuery = `SELECT password FROM users WHERE user_name = $1`;
     const params = [user_name];
     const hashedPw = await db.query(hashPwQuery, params);
@@ -27,12 +34,29 @@ userController.checkUserExists = async (req, res, next) => {
                 message: 'Error in create user middleware',
             });
         }
-        if(result === true){
-            return res.redirect('/login');
-        } else {
-            return next();
-        }
+        res.locals.userExists = result;
+        return next();
     })
+}
+
+//redirecting to login page
+userController.redirectToLogin = async (req, res, next) => {
+    console.log('login middleware: ', res.locals.userExists)
+    if(res.locals.userExists === true){
+        return res.redirect('/login');
+        // res.redirect('https://google.com/');
+    } else {
+        return next();
+    }
+}
+
+//redirect to home page
+userController.redirectToHomePage = async (req, res, next) => {
+    if(res.locals.userExists === true){
+        return res.redirect('/home');
+    } else {
+        return next();
+    }
 }
 
 userController.createUser = (req, res, next) => {
@@ -52,7 +76,7 @@ userController.createUser = (req, res, next) => {
             return next({
                 log: 'Error in create user middleware',
                 status: 400,
-                message: 'Error in create user middleware'
+                message: 'Please fill in all fields'
             });
         })
 }
