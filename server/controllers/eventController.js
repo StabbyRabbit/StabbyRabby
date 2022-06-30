@@ -6,14 +6,15 @@ const { response } = require('../server');
 const eventController = {};
 
 eventController.createEvent = (req, res, next) => {
-    const data = req.body;
-
-    const queryStr = `INSERT INTO events (title, date, start_time, end_time, activity_type, num_participants, participants, location)
-  VALUES ('${data.title}', '${data.date}', '${data.start_time}', '${data.end_time}', '${data.activity_type}', ${data.num_participants},  ARRAY['${data.participants} '], '${data.location}')`
+    const { ushoster, title, date, start_time, end_time, activity, max_participants, location } = req.body;
+    const queryStr = `
+    INSERT INTO events_list ( host, title, date, start_time, end_time, activity, max_participants, location ) 
+    VALUES ('${host}', '${title}', '${date}', '${start_time}', '${end_time}', '${activity}', ${max_participants}, '${location}')
+    RETURNING title`
 
     db.query(queryStr)
-        .then(() => {
-            res.locals.newEvent = data;
+        .then(data => {
+            res.locals.newEvent = data.rows[0].title;
             return next();
         }).catch(err => {
             return next({
@@ -22,7 +23,6 @@ eventController.createEvent = (req, res, next) => {
                 message: 'Please verify data input are correct type.',
             });
         })
-
 }
 
 module.exports = eventController;
