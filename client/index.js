@@ -4,7 +4,7 @@ import App from './App';
 import styles from './style.css';
 
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
-import Profile from "./Pages/Profile/Profile.jsx";
+import Profile from "./Pages/Profile/profile.jsx";
 import CreateEvent from "./Pages/CreateEvent/CreateEvent.jsx";
 import Signup from "./Pages/signup/signup.jsx";
 import MainContainer from './MainContainer';
