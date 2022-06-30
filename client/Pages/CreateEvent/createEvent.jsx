@@ -5,14 +5,12 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function createEvent() {
-  const [nameX, setName] = useState('');
-  const [titleX, setTitle] = useState('');
-  const [dateX, setDate] = useState('');
-  const [timeStart, setTimeStart] = useState('');
-  const [timeEnd, setTimeEnd] = useState('');
-  const [activityType, setActivity_type] = useState('');
-  const [numParticipants, setNumParticipants] = useState('');
-  const [locationX, setLocation] = useState('');
+  const [title, setTitle] = useState('');
+  const [start_date, setStart_Date] = useState('');
+  const [end_date, setEnd_Date] = useState('');
+  const [activity, steActivity] = useState('');
+  const [max_participants, setMax_participants] = useState('');
+  const [zip, setZip] = useState('');
 
   //show participants
   //sign up button - input name - add participant list - add to array
@@ -20,17 +18,18 @@ export default function createEvent() {
 
 function handleSubmit () {
 
-  const obj = {
-    title: titleX,
-    date: dateX,
-    start_time: timeStart,
-    end_time: timeEnd,
-    activity_type: activityType,
-    num_participants: numParticipants,
-    participants:nameX,
-    location: locationX
-  }
+  // const obj = {
+  //   title: titleX,
+  //   date: dateX,
+  //   start_time: timeStart,
+  //   end_time: timeEnd,
+  //   activity_type: activityType,
+  //   num_participants: numParticipants,
+  //   participants:nameX,
+  //   location: locationX
+  // }
 
+const obj = { title, start_date, end_date, activity, max_participants, zip };
 
   fetch('http://localhost:3000/createEvent', {
     method: 'POST',

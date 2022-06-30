@@ -1,6 +1,6 @@
-const {home} = require('nodemon/lib/utils');
+// const {home} = require('nodemon/lib/utils');
 const db = require('../models/databaseModel');
-const router = require('../routes/homeRouter');
+// const router = require('../routes/homeRouter');
 
 const homeController = {};
 
@@ -38,6 +38,7 @@ homeController.deleteEvent = (req, res, next) => {
       });
     });
 };
+
 //max number - #of participants in participant table
 homeController.updateEvent = (req, res, next) => {
   const data = req.body;

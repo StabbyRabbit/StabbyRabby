@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const cors = require("cors");
-
+const cors = require("cors")
+const cookieParser = require('cookie-parser');
 
 const PORT = 3000;
 
@@ -11,20 +11,20 @@ const createEventRouter = require('./routes/createEventRouter');
 const profileRouter = require('./routes/profileRouter');
 const { urlencoded } = require('body-parser');
 
+
+const signupRouter = require('./routes/signupRouter');
+const loginRouter = require('./routes/loginRouter');
+
 app.use(cors());
 app.use(express.json());
-app.use(urlencoded());
+app.use(express.urlencoded());
+app.use(cookieParser());
 
 app.use('/home', homeRouter);
 app.use('/createEvent', createEventRouter)
+app.use('/signup', signupRouter)
+app.use('/login', loginRouter)
 app.use('/profile', profileRouter)
-
-
-
-// app.get('/', (req,res) => {
-//     console.log(req.body)
-//     res.send({key: "It worked!"})
-// })
 
 
 // catch-all route handler for any requests to an unknown route

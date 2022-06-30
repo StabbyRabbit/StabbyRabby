@@ -1,8 +1,11 @@
 
 /////Stab-It Rabbit Data Table////////
+// Created tables in elephant sql browser
+// Statements here for reference
 
 /////////Events
 // CREATE TABLE event (
+//     name varchar NOT NULL,
 //     event_id INT NOT null,
 //     FOREIGN KEY (event_id)
 //     REFERENCES events_list (id),
@@ -32,9 +35,10 @@
 /////////Events List
 //     CREATE TABLE events_list (
 //     id SERIAL PRIMARY KEY,
+//     creator VARCHAR NOT NULL,
 //     title VARCHAR NOT NULL,
-//     start_date VARCHAR NOT NULL,
-//     end_date VARCHAR NOT NULL,
+//     start_date TIMESTAMP NOT NULL,
+//     end_date TIMESTAMP NOT NULL,
 //     activity VARCHAR NOT NULL,
 //     max_participants INT NOT NULL,
 //     zip INT NOT NULL
@@ -50,6 +54,15 @@
 //     zip INT,
 //     profile_picture_url VARCHAR
 //     );
+
+/////////Sessions Table
+//     CREATE TABLE sessions (
+//     session_id varchar PRIMARY KEY,
+//     user_id INT NOT NULL,
+//     FOREIGN KEY (user_id)
+//     REFERENCES users (id)
+//     );
+
 
 /////////////**********/////////////Previous Database Notes////////////////**********////////////////
 // USER TABLE
