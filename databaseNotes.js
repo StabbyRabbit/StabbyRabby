@@ -53,6 +53,15 @@
 //     profile_picture_url VARCHAR
 //     );
 
+/////////Sessions Table
+//     CREATE TABLE sessions (
+//     session_id varchar PRIMARY KEY,
+//     user_id INT NOT NULL,
+//     FOREIGN KEY (user_id)
+//     REFERENCES users (id)
+//     );
+
+
 /////////////**********/////////////Previous Database Notes////////////////**********////////////////
 // USER TABLE
 

@@ -1,6 +1,6 @@
-const {home} = require('nodemon/lib/utils');
+// const {home} = require('nodemon/lib/utils');
 const db = require('../models/databaseModel');
-const router = require('../routes/homeRouter');
+// const router = require('../routes/homeRouter');
 
 const homeController = {};
 
