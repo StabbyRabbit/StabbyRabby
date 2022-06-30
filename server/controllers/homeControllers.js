@@ -6,7 +6,7 @@ const homeController = {};
 
 homeController.getEvents = (req, res, next) => {
   const queryStr = 'SELECT * FROM events_list';
-
+//RETURN
   db.query(queryStr)
     .then((data) => {
       res.locals.events = data.rows;
@@ -23,8 +23,8 @@ homeController.getEvents = (req, res, next) => {
 
 homeController.deleteEvent = (req, res, next) => {
   const { id } = req.body
-  const queryStr = `DELETE FROM events_list WHERE id = ${id}`;
-
+  const queryStr = `DELETE FROM events_list WHERE id = ${id} RETURNING id`;
+//RETURN
   db.query(queryStr)
     .then((data) => {
       res.locals.events = data.rows;
@@ -63,7 +63,7 @@ homeController.updateEvent = (req, res, next) => {
   });
   // subStr = 'columnName1 = value[1], columnName2 = value[2]'
 
-  const queryStr = `UPDATE events SET ${subStr} WHERE id = ${data.id}`;
+  const queryStr = `UPDATE events SET ${subStr} WHERE id = ${data.id} RETURNING id`;
 
   db.query(queryStr)
     .then(() => {
@@ -82,8 +82,8 @@ homeController.updateEvent = (req, res, next) => {
 
 homeController.signUp = (req, res, next) => {
   const {name, id} = req.body;
-  const queryStr = `UPDATE events SET participants = ARRAY_APPEND(participants, '${name} '), num_participants = num_participants - 1 WHERE id = ${id};`;
-
+  const queryStr = `UPDATE events SET participants = ARRAY_APPEND(participants, '${name} '), num_participants = num_participants - 1 WHERE id = ${id}; RETURNING id`;
+//RETURN
   db.query(queryStr)
     .then(() => {
       console.log(name, id);

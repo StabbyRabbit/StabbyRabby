@@ -1,21 +1,25 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const cors = require("cors")
+const cors = require("cors");
+
 
 const PORT = 3000;
 
 const homeRouter = require('./routes/homeRouter');
 const createEventRouter = require('./routes/createEventRouter');
+const profileRouter = require('./routes/profileRouter');
+const { urlencoded } = require('body-parser');
 
-
-app.use(cors())
+app.use(cors());
 app.use(express.json());
+app.use(urlencoded());
 
 
 
 app.use('/home', homeRouter);
 app.use('/createEvent', createEventRouter)
+app.use('/profile', profileRouter)
 
 
 
