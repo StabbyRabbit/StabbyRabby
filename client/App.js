@@ -10,7 +10,7 @@ export default function App() {
   //     .then(response => console.log(response));
   return (
     <div display="flex">
-      <h1>Stab-It Rabbit Landing Pad</h1>
+     
 
       <nav id="nav">
         <Link id="navText" to="/home">
