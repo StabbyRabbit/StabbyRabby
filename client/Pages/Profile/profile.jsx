@@ -1,7 +1,8 @@
-import React, { Component } from ‘react’;
-import { useState } from ‘react’;
-import { useEffect } from ‘react’;
-import  ProfileBox from ‘./ProfileBox.jsx’
+import React, { Component } from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import  ProfileBox from './ProfileBox.jsx'
+
 export default function Profile() {
 //     const [titleX, setTitle] = useState(‘’);
 //     const [dateX, setDate] = useState(‘’);
@@ -21,7 +22,7 @@ const [data, setData] = useState([]);
                 const json = await response.json();
                     setData(json)                       //callback function
             } catch (err) {
-                console.log(‘error’, error);
+                console.log('error', error);
             }
             fetchData();
         }
@@ -30,8 +31,8 @@ const [data, setData] = useState([]);
 useEffect(() => {
     const sortArray = type => {
         const types = {  //obj
-            title: ‘title’,
-            date: ‘date’
+            title: 'title',
+            date: 'date'
         };
         const sortProperty = types[type];
         const sorted = [...data].sort((a,b) => a[sortProperty].localeCompare(b[sortProperty]));
@@ -57,7 +58,7 @@ useEffect(() => {
 //     }
 // }
   return(
-    <div id = “eventContainer”>
+    <div id = "eventContainer">
         <h1>My Events</h1>
         <div><ProfileBox /></div>
     </div>
