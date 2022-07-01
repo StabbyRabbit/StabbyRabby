@@ -23,9 +23,9 @@ app.use('/static', express.static(path.join(__dirname, 'public')))
 // app.use('/', express.static(path.join(__dirname, 'index.html')));
 app.use('/home', homeRouter);
 app.use('/createEvent', createEventRouter)
-app.use('/signup', signupRouter)
-app.use('/login', loginRouter)
-app.use('/profile', profileRouter)
+// app.use('/signup', signupRouter)
+// app.use('/login', loginRouter)
+// app.use('/profile', profileRouter)
 
 
 // catch-all route handler for any requests to an unknown route
