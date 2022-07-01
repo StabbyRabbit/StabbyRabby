@@ -25,24 +25,24 @@ import { useState } from 'react';
       
       
       function handleSubmit() {
-        // const obj = {name:nameX,
-        //             id: info.id}
-        //             console.log(obj)
+        const obj = {name:nameX,
+                    id: info.id}
+                    console.log(obj)
         
-        // fetch('http://localhost:3000/home/signUp', {
-          //     method: 'PATCH',
-          //     headers: {
-            //                 'Content-Type': 'application/json',
-            //                   // x-www-form-urlencoded
-            //               },
-            //             body: JSON.stringify(obj),
-            //               })
-            //             //   .then(response => response.json())
-            //               .catch(console.log("Error in fetch PATCH to /signUp"))
+        fetch('http://localhost:3000/home/signUp', {
+              method: 'PATCH',
+              headers: {
+                            'Content-Type': 'application/json',
+                              // x-www-form-urlencoded
+                          },
+                        body: JSON.stringify(obj),
+                          })
+                        //   .then(response => response.json())
+                          .catch(console.log("Error in fetch PATCH to /signUp"))
             
             
           }
-          //   var parseDate = function(value) {
+            // var parseDate = function(value) {
             function changeDate (){
              let formattedDate= new Date(info.date).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) ; //10/10/2013
 return formattedDate;
@@ -64,15 +64,16 @@ return formattedDate;
               <h2><strong>Date:</strong> {info.start_date}</h2>
               <h2><strong>End: </strong>{info.end_date}</h2>
               <h2><strong>Activity: </strong>{info.activity}</h2>
-              <h2><strong>Location:</strong> {info.zip}</h2>
+              <h2><strong>Location:</strong> {info.location}</h2>
               <h2><strong>Number of Participants:</strong> {info.max_participants}</h2>
-              <h2><strong>Sign up list:</strong> {info.participants}</h2>
+              {/* <h2><strong>Sign up list:</strong> {info.participants}</h2> */}
             
               {/* <input id='signUpInput' placeholder='Enter your name!' onChange = {e => {
                 setName(e.target.value)
                 }}/> */}
                  <button id = 'signupEventButton' onClick={() => {
                   handleSubmit()
+               
                   alert("Successfully submitted")
               }}>Sign up for event</button>
               

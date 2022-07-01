@@ -19,11 +19,10 @@ export default function App() {
         |{' '}
         <Link id="navText" to="/createEvent">
           Create Event
-        </Link>{' '}
-        |{' '}
-        <Link id="navText" to="/profile">
-          My Profile
         </Link>
+        {/* <Link id="navText" to="/profile">
+          My Profile
+        </Link> */}
       </nav>
       {/* </header> */}
       {/* <Link id="navSignup" to="/signup">
