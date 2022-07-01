@@ -10,7 +10,7 @@ export default function App() {
   //     .then(response => console.log(response));
   return (
     <div display="flex">
-      <h1>Stab-It Rabbit Landing Pad</h1>
+     
 
       <nav id="nav">
         <Link id="navText" to="/home">
@@ -19,11 +19,10 @@ export default function App() {
         |{' '}
         <Link id="navText" to="/createEvent">
           Create Event
-        </Link>{' '}
-        |{' '}
-        <Link id="navText" to="/profile">
-          My Profile
         </Link>
+        {/* <Link id="navText" to="/profile">
+          My Profile
+        </Link> */}
       </nav>
       {/* </header> */}
       {/* <Link id="navSignup" to="/signup">
