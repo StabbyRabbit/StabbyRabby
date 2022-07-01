@@ -33,16 +33,17 @@
 //     )
 
 /////////Events List
-//     CREATE TABLE events_list (
+// CREATE TABLE events_list (
 //     id SERIAL PRIMARY KEY,
-//     creator VARCHAR NOT NULL,
+//     host VARCHAR NOT NULL,
 //     title VARCHAR NOT NULL,
-//     start_date TIMESTAMP NOT NULL,
-//     end_date TIMESTAMP NOT NULL,
+//     date DATE NOT NULL,
+//     start_date VARCHAR NOT NULL,
+//     end_date VARCHAR NOT NULL,
 //     activity VARCHAR NOT NULL,
 //     max_participants INT NOT NULL,
-//     zip INT NOT NULL
-//     )
+//     location VARCHAR NOT NULL
+// )
 
 /////////Users
 //     CREATE TABLE users (

@@ -6,22 +6,21 @@ import { useState } from 'react';
 
 //class App extends Component {
   export default function EventBox ({
+    participants,
     info,
-    onComment,
+    //onComment,
     onSignUp,
-    onViewParticipants,
+    //onViewParticipants,
   })
   {
     const [nameX, setName] = useState('');
     
-    // function changeDate (){
+    function changeDate (){
       
-      //   let date2 = moment('2019-11-03T05:00:00.000Z').utc().format('MM/DD/YYYY')
-      //   // console.log(date2)
+        let date2 = moment('2019-11-03T05:00:00.000Z').utc().format('MM/DD/YYYY')
+      }
       
-      // }
-      
-      // console.log(info.participants)
+      console.log(info.participants)
       
       
       function handleSubmit() {
@@ -44,7 +43,7 @@ import { useState } from 'react';
           }
             // var parseDate = function(value) {
             function changeDate (){
-             let formattedDate= new Date(info.date).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) ; //10/10/2013
+ let formattedDate= new Date(info.date).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) ; //10/10/2013
 return formattedDate;
             }
   //     var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
@@ -61,11 +60,11 @@ return formattedDate;
             <div className='eventBox'>
               <img src='https://freepngclipart.com/download/paint/69869-rose-hand-painted-north-drawing-compass-free-hq-image.png'/>
               <h2><strong>Title:</strong> {info.title}</h2>
-              <h2><strong>Date:</strong> {info.start_date}</h2>
-              <h2><strong>End: </strong>{info.end_date}</h2>
+              <h2><strong>Date:</strong> {changeDate()}</h2>
+              <h2><strong>End: </strong>{info.end_time}</h2>
               <h2><strong>Activity: </strong>{info.activity}</h2>
               <h2><strong>Location:</strong> {info.location}</h2>
-              <h2><strong>Number of Participants:</strong> {info.max_participants}</h2>
+              <h2><strong>Max Number of Participants:</strong> {info.max_participants}</h2>
               {/* <h2><strong>Sign up list:</strong> {info.participants}</h2> */}
             
               {/* <input id='signUpInput' placeholder='Enter your name!' onChange = {e => {
