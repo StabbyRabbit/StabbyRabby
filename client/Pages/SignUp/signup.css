@@ -1,22 +1,22 @@
 body {
-
 }
 
 h1{
-   
-
 
 }
+/* #signup {
+    position: fixed; 
+} */
 #signupNavBar {
+margin-top: auto;
 border: 2px solid black;
 left: 0px;
 height: 10%;
 width: 100%;
 background-color: white;
-position: fixed;
-margin-top: -267px;
+position: relative;
+margin-top: relative;
 vertical-align: middle;
-
 }
 
 
@@ -24,7 +24,7 @@ vertical-align: middle;
   
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15%;
+    margin-top: auto;
     width: 20%;
     padding: 2px;
     padding: 15px 10px;
@@ -33,7 +33,7 @@ vertical-align: middle;
     border-radius: 9px;
     line-height: 35px;
     font-size: 20px;
- 
+    /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) */
  
   
     /* /* position:fixed;
