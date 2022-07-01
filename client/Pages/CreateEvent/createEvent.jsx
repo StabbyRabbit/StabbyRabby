@@ -53,7 +53,9 @@ const obj = { host, title, date, start_time, end_time, activity, max_participant
     return(
     <main>
       <div id = "eventContainer">
-         <h1>Create Event Page</h1>
+         <h1 id='cr'>Create Event Page</h1>
+         <img src='https://freepngclipart.com/download/paint/69869-rose-hand-painted-north-drawing-compass-free-hq-image.png'/>
+
          <label id = "eventFields">Host name: &nbsp;</label> 
          <input id = "eventFields" onChange = {e => setHost(e.target.value)} />
       <div>

@@ -7,26 +7,44 @@
 // //     const [titleX, setTitle] = useState(‘’);
 // //     const [dateX, setDate] = useState(‘’);
 // //     const [timeStart, setTimeStart] = useState(‘’)
-// const [data, setData] = useState([]);
 // //data needed:
 //     //user created events
 //     //title and date specifically
 //         //fetch
 //     //get information
 //     //fetch information//
-//     useEffect(() => {
-//         const url = ‘http://localhost:3000/pages/profile/profile'
-//         const fetchData = async () => {
-//             try {
-//                 const response = await fetch(url);
-//                 const json = await response.json();
-//                     setData(json)                       //callback function
-//             } catch (err) {
-//                 console.log('error', error);
-//             }
-//             fetchData();
-//         }
-//     }, [setData]); //
+
+//     const [ title, setTitle] = useState(""); 
+//     const [date, setDate] = useState(""); 
+//     const getEvents = () => {
+//         const obj = { title, date }; 
+//         fetch('http://localhost:3000/profile', {
+//           method: 'POST', 
+//           headers: {
+//             'Content-type': 'application/json',
+//           }, 
+//           body: JSON.stringify(obj)    
+//         })
+//         .then(response => response.json())
+//         .then(res => console.log(res))
+//         .catch(console.log("Error in fetch POST to /profile"))
+    
+//         setTitle(""); 
+//         setDate(""); 
+//       }
+//     // useEffect(() => {
+//     //     const url = ‘http://localhost:3000/pages/profile/profile'
+//     //     const fetchData = async () => {
+//     //         try {
+//     //             const response = await fetch(url);
+//     //             const json = await response.json();
+//     //                 setData(json)                       //callback function
+//     //         } catch (err) {
+//     //             console.log('error', error);
+//     //         }
+//     //         fetchData();
+//     //     }
+//     // }, [setData]); //
 //     //organize data recieved//
 // useEffect(() => {
 //     const sortArray = type => {
