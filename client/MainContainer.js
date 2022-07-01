@@ -5,16 +5,13 @@ import { useState } from 'react';
 // import { getData } from "./fakedata";
 import { useEffect } from 'react';
 
-
-// const data = getData();
-
-
-
 //new get request, the req.params will 
 
 export default function MainContainer (){
+
     const[data, setData] = useState([]);
     const[sortType, setSortType] = useState('title');
+    const[participants,setParticipants] = useState()
 
     useEffect(() => {
             const url = 'http://localhost:3000/home'
@@ -22,13 +19,15 @@ export default function MainContainer (){
                     try {
                             const response = await fetch(url);
                             const json = await response.json();
-                               setData(json)
+                            console.log(json)
+                               setData(json.events)
+                               setParticipants(json.participants)
                         } catch (err) {
                                 console.log("error", error);
                             }
         }
         fetchData();
-    }, [setData]);
+    }, [setData, setParticipants]);
 
     useEffect(() => {
         const sortArray = type => {
@@ -47,6 +46,10 @@ export default function MainContainer (){
         };
         sortArray(sortType)
     }, [sortType]);
+
+    useEffect(() => {
+        
+}, [setParticipants]);
   
 
     return (
@@ -61,7 +64,8 @@ export default function MainContainer (){
           (   
         <EventBox
         key={info.id}
-        info={info}/>
+        info={info}
+        />
         ))}
          </ul> 
        </div>

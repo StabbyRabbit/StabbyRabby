@@ -27,7 +27,6 @@ app.use('/signup', signupRouter)
 app.use('/login', loginRouter)
 app.use('/profile', profileRouter)
 
-
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.status(404).send('Page does not exist.'));
 

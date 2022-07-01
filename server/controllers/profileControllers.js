@@ -6,9 +6,9 @@ const profileControllers = {};
 
 profileControllers.getEvents = (req, res, next) => {
     const queryStr = 'SELECT * FROM events_list';
+    const { user_name } = req.body
+    // const profileQueryStr = `SELECT * FROM events_list WHERE host=$1 ${user_name}`
 
-    const profileQueryStr = 'SELECT * FROM events_list WHERE '
-  //RETURN
     db.query(queryStr)
       .then((data) => {
         res.locals.events = data.rows;

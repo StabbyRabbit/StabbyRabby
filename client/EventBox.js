@@ -6,22 +6,21 @@ import { useState } from 'react';
 
 //class App extends Component {
   export default function EventBox ({
+    participants,
     info,
-    onComment,
+    //onComment,
     onSignUp,
-    onViewParticipants,
+    //onViewParticipants,
   })
   {
     const [nameX, setName] = useState('');
     
-    // function changeDate (){
+    function changeDate (){
       
-      //   let date2 = moment('2019-11-03T05:00:00.000Z').utc().format('MM/DD/YYYY')
-      //   // console.log(date2)
+        let date2 = moment('2019-11-03T05:00:00.000Z').utc().format('MM/DD/YYYY')
+      }
       
-      // }
-      
-      // console.log(info.participants)
+      console.log(info.participants)
       
       
       function handleSubmit() {
@@ -44,7 +43,7 @@ import { useState } from 'react';
           }
           //   var parseDate = function(value) {
             function changeDate (){
-             let formattedDate= new Date(info.date).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) ; //10/10/2013
+ let formattedDate= new Date(info.date).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) ; //10/10/2013
 return formattedDate;
             }
   //     var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
@@ -60,28 +59,26 @@ return formattedDate;
 
             <div className='eventBox'>
               <h2>Title: {info.title}</h2>
-              <h2>Date: {info.start_date}</h2>
-              <h2>End: {info.end_date}</h2>
-              <h2>Activity: {info.activity}</h2>
-              <h2>Location: {info.zip}</h2>
-              <h2>Number of Participants: {info.max_participants}</h2>
-              <h2>Sign up list: {info.participants}</h2>
-              <button id = 'commentButton' onClick={() => {
-              {/* <h2>Date: {info.name}</h2>
-              <h2>Activity: {info.number}</h2>
-              <h2>Start: {info.amount}</h2>
-              <h2>End: {info.due}</h2> */}
               <h2>Date: {changeDate()}</h2>
-             
+              <h2>Start Time: {info.start_time}</h2>
+              <h2>End Time: {info.end_time}</h2>
+              <h2>Activity: {info.activity}</h2>
+              <h2>Location: {info.location}</h2>
+              <h2>Max Number of Participants: {info.max_participants}</h2>
+              <h2>Amount of Positions Remaining: {info.max_participants - participants}</h2>
+              {/* <button id = 'commentButton' onClick={() => {
+                onComment(alert)}}>Comment</button> 
+              
+              */}
               {/* <button id = 'commentButton' onClick={() => {
                   onComment(alert('hello'))*/}
-              }}>Comment</button> 
+              
             
               {/* <input id='signUpInput' placeholder='Enter your name!' onChange = {e => {
                 setName(e.target.value)
                 }}/> */}
                  <button id = 'signupEventButton' onClick={() => {
-                  handleSubmit()
+                  onSignUp()
                   alert("Successfully submitted")
               }}>Sign up for event</button>
             </div>

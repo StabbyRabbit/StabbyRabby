@@ -4,39 +4,22 @@ const db = require('../models/databaseModel');
 
 const homeController = {};
 
-homeController.getEvents = (req, res, next) => {
+homeController.getEvents = async (req, res, next) => {
   const queryStr = 'SELECT * FROM events_list';
-//RETURN
-  db.query(queryStr)
-    .then((data) => {
-      res.locals.events = data.rows;
-      return next();
-    })
-    .catch((err) => {
-      next({
-        log: 'Error in get events middleware',
-        status: 400,
-        message: 'Unable to retrieve events.',
+  const queryParStr = 'SELECT * FROM participants'
+  try{
+    const events = await db.query(queryStr);
+    const participants = await db.query(queryParStr);
+    res.locals.events = events.rows;
+    res.locals.participants = participants.rows
+    return next();
+  } catch (err) {
+    next({
+          log: 'Error in get events middleware',
+          status: 400,
+          message: 'Unable to retrieve events.',
       });
-    });
-};
-
-homeController.deleteEvent = (req, res, next) => {
-  const { id } = req.body
-  const queryStr = `DELETE FROM events_list WHERE id = ${id} RETURNING id`;
-//RETURN
-  db.query(queryStr)
-    .then((data) => {
-      res.locals.events = data.rows;
-      return next();
-    })
-    .catch((err) => {
-      next({
-        log: 'Error in get events middleware',
-        status: 400,
-        message: 'Error deleting event',
-      });
-    });
+    };
 };
 
 //max number - #of participants in participant table
