@@ -57,6 +57,7 @@
 
 /////////Sessions Table
 //     CREATE TABLE sessions (
+    //SSID session_id
 //     session_id varchar PRIMARY KEY,
 //     user_id INT NOT NULL,
 //     FOREIGN KEY (user_id)

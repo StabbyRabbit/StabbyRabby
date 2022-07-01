@@ -10,8 +10,6 @@ export default function App() {
   //     .then(response => console.log(response));
   return (
     <div display="flex">
-     
-
       <nav id="nav">
         <Link id="navText" to="/home">
           Home

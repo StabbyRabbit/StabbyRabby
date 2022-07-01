@@ -63,7 +63,8 @@ export default function MainContainer (){
             <option value="location">Location</option>
             <option value="max_participants">Participant Count</option>
         </select>
-          <ul>{data.map(info => (   
+          <ul>{data.map(info => 
+          (   
         <EventBox
         key={info.id}
         info={info}/>
