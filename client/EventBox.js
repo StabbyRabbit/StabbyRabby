@@ -24,24 +24,24 @@ import { useState } from 'react';
       
       
       function handleSubmit() {
-        // const obj = {name:nameX,
-        //             id: info.id}
-        //             console.log(obj)
+        const obj = {name:nameX,
+                    id: info.id}
+                    console.log(obj)
         
-        // fetch('http://localhost:3000/home/signUp', {
-          //     method: 'PATCH',
-          //     headers: {
-            //                 'Content-Type': 'application/json',
-            //                   // x-www-form-urlencoded
-            //               },
-            //             body: JSON.stringify(obj),
-            //               })
-            //             //   .then(response => response.json())
-            //               .catch(console.log("Error in fetch PATCH to /signUp"))
+        fetch('http://localhost:3000/home/signUp', {
+              method: 'PATCH',
+              headers: {
+                            'Content-Type': 'application/json',
+                              // x-www-form-urlencoded
+                          },
+                        body: JSON.stringify(obj),
+                          })
+                        //   .then(response => response.json())
+                          .catch(console.log("Error in fetch PATCH to /signUp"))
             
             
           }
-          //   var parseDate = function(value) {
+            // var parseDate = function(value) {
             function changeDate (){
  let formattedDate= new Date(info.date).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) ; //10/10/2013
 return formattedDate;
@@ -58,29 +58,24 @@ return formattedDate;
         return (
 
             <div className='eventBox'>
-              <h2>Title: {info.title}</h2>
-              <h2>Date: {changeDate()}</h2>
-              <h2>Start Time: {info.start_time}</h2>
-              <h2>End Time: {info.end_time}</h2>
-              <h2>Activity: {info.activity}</h2>
-              <h2>Location: {info.location}</h2>
-              <h2>Max Number of Participants: {info.max_participants}</h2>
-              <h2>Amount of Positions Remaining: {info.max_participants - participants}</h2>
-              {/* <button id = 'commentButton' onClick={() => {
-                onComment(alert)}}>Comment</button> 
-              
-              */}
-              {/* <button id = 'commentButton' onClick={() => {
-                  onComment(alert('hello'))*/}
-              
+              <img src='https://freepngclipart.com/download/paint/69869-rose-hand-painted-north-drawing-compass-free-hq-image.png'/>
+              <h2><strong>Title:</strong> {info.title}</h2>
+              <h2><strong>Date:</strong> {changeDate()}</h2>
+              <h2><strong>End: </strong>{info.end_time}</h2>
+              <h2><strong>Activity: </strong>{info.activity}</h2>
+              <h2><strong>Location:</strong> {info.location}</h2>
+              <h2><strong>Max Number of Participants:</strong> {info.max_participants}</h2>
+              {/* <h2><strong>Sign up list:</strong> {info.participants}</h2> */}
             
               {/* <input id='signUpInput' placeholder='Enter your name!' onChange = {e => {
                 setName(e.target.value)
                 }}/> */}
                  <button id = 'signupEventButton' onClick={() => {
-                  onSignUp()
+                  handleSubmit()
+               
                   alert("Successfully submitted")
               }}>Sign up for event</button>
+              
             </div>
         )
     }

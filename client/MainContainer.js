@@ -34,7 +34,10 @@ export default function MainContainer (){
             const types = {
                title: 'title',
                date: 'date',
-               activity_type: 'activity_type' 
+               end_date: 'end',
+               activity_type: 'activity_type' ,
+               location: 'location',
+               max_participants: 'participant number'
             };
             const sortProperty = types[type];
             console.log(types[type])
@@ -54,11 +57,14 @@ export default function MainContainer (){
 
     return (
         <div className='mainContainer'>
-            <label id = "sortText">Sort By: &nbsp;</label>
+            <label id = "sortText"> &nbsp;</label>
         <select id="dropDown" onChange={(e) => setSortType(e.target.value)}>
             <option value="title">Title</option>
             <option value="date">Date</option>
+            <option value="end_date">End</option>
             <option value="activity_type">Activity</option>
+            <option value="location">Location</option>
+            <option value="max_participants">Participant Count</option>
         </select>
           <ul>{data.map(info => 
           (   
