@@ -5,16 +5,13 @@ import { useState } from 'react';
 // import { getData } from "./fakedata";
 import { useEffect } from 'react';
 
-
-// const data = getData();
-
-
-
 //new get request, the req.params will 
 
 export default function MainContainer (){
+
     const[data, setData] = useState([]);
     const[sortType, setSortType] = useState('title');
+    const[participants,setParticipants] = useState()
 
     useEffect(() => {
             const url = 'http://localhost:3000/home'
@@ -22,20 +19,25 @@ export default function MainContainer (){
                     try {
                             const response = await fetch(url);
                             const json = await response.json();
-                               setData(json)
+                            console.log(json)
+                               setData(json.events)
+                               setParticipants(json.participants)
                         } catch (err) {
                                 console.log("error", error);
                             }
         }
         fetchData();
-    }, [setData]);
+    }, [setData, setParticipants]);
 
     useEffect(() => {
         const sortArray = type => {
             const types = {
                title: 'title',
                date: 'date',
-               activity_type: 'activity_type' 
+               end_date: 'end',
+               activity_type: 'activity_type' ,
+               location: 'location',
+               max_participants: 'participant number'
             };
             const sortProperty = types[type];
             console.log(types[type])
@@ -47,20 +49,29 @@ export default function MainContainer (){
         };
         sortArray(sortType)
     }, [sortType]);
+
+    useEffect(() => {
+        
+}, [setParticipants]);
   
 
     return (
         <div className='mainContainer'>
-            <label id = "sortText">Sort By: &nbsp;</label>
+            <label id = "sortText"> &nbsp;</label>
         <select id="dropDown" onChange={(e) => setSortType(e.target.value)}>
             <option value="title">Title</option>
             <option value="date">Date</option>
+            <option value="end_date">End</option>
             <option value="activity_type">Activity</option>
+            <option value="location">Location</option>
+            <option value="max_participants">Participant Count</option>
         </select>
-          <ul>{data.map(info => (   
+          <ul>{data.map(info => 
+          (   
         <EventBox
         key={info.id}
-        info={info}/>
+        info={info}
+        />
         ))}
          </ul> 
        </div>

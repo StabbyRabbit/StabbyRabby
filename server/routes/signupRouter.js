@@ -9,7 +9,7 @@ const db = require('../models/databaseModel');
 router.post('/', 
   userController.checkUserInputs, 
   userController.checkUserExists, 
-  userController.redirectToLogin,
+//   userController.redirectToLogin,
   userController.createUser, 
   (req, res) => {
 //   console.log(res.locals.newUser )

@@ -19,7 +19,7 @@ export default function signUp() {
     })
     .then(res => res.json())
     .then(res => {
-      console.log(res);
+      console.log('this is' ,res);
       //if user exists in database, redirect to /
       if(res === true) window.location = 'http://localhost:8080/login';
       else {
@@ -40,7 +40,9 @@ export default function signUp() {
       <div id='signupNavBar'>
         <div id='navBarText'>
         <div id='siteName'>
-          <button id='siteName'> Stabby Rabbit </button>
+          {/* <button id='siteName'> Stabby Rabbit </button> */}
+          {/* <img src='https://freepngclipart.com/download/paint/69869-rose-hand-painted-north-drawing-compass-free-hq-image.png'/> */}
+
         </div>
       <div id='switchLogin'>
         <label>Have an account? </label>
