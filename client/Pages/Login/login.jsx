@@ -18,8 +18,13 @@ export default function LogIn() {
       },
       body: JSON.stringify(obj)
     })
-     .then(response => response.json())
-     .then(res => console.log(res))
+     .then(res => res.json())
+     .then(res => {
+       console.log('RESPONSE: ', res);
+       //if user exists in database, redirect to /
+       if(res === true) window.location = 'http://localhost:8080';
+       else alert("Please enter a valid email");
+     })
      // .then(useNavigate("/success"))
      .catch(console.log("Error in fetch POST to /login"))
 

@@ -12,13 +12,24 @@ export default function signUp() {
     fetch('http://localhost:3000/signup', {
       method: 'POST', 
       headers: {
-        'Content-type': 'application/json',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       }, 
       body: JSON.stringify(obj)    
     })
-    .then(response => response.json())
-    .then(res => console.log(res))
-    .catch(console.log("Error in fetch POST to /signup"))
+    .then(res => res.json())
+    .then(res => {
+      console.log('this is' ,res);
+      //if user exists in database, redirect to /
+      if(res === true) window.location = 'http://localhost:8080/login';
+      else {
+        // alert
+        window.location = 'http://localhost:8080';
+      }
+    })
+    // .then(useNavigate("/success"))
+    .catch(console.log("Error in fetch POST to /login"))
+    // .catch(console.log("Error in fetch POST to /signup"))
 
     setUsername(""); 
     setPassword(""); 
